@@ -7,6 +7,7 @@ const AppContext = createContext();
 // Create a context provider component
 export function AppProvider({ children }) {
   const [players, setPlayers] = useState(['', '', '']);
+  const [imgSrc, setImgSrc] = useState(null);
 
   const updateString = (index, newValue) => {
     setPlayers((prevArray) => {
@@ -46,7 +47,9 @@ export function AppProvider({ children }) {
             players,
             updateString,
             addPlayer,
-            removePlayer
+            removePlayer,
+            imgSrc,
+            setImgSrc
             }}>
       {children}
     </AppContext.Provider>

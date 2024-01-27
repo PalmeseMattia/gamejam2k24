@@ -13,7 +13,9 @@ export default function SelectPg(){
     console.log(query);
     return(
         <main className='text-5xl flex flex-col items-center justify-center w-screen h-screen'>
-            <p>Select PG: Adesso giocano {players[(parseInt(step) - 1) % players.length]} e {players[(parseInt(step)) % players.length]}</p>
+            <p>Select PG: Adesso giocano 
+                <span className='text-orange-600'>{" " + players[(parseInt(step) - 1) % players.length] + " "}</span> e 
+                <span className='text-orange-600'>{" " + players[(parseInt(step)) % players.length] + " "}</span></p>
             <p>{query["step"]}</p>
             <Link
                 className='mt-10' 
