@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main className="text-5xl flex flex-col items-center justify-center w-screen h-screen">
-      <div className='flex flex-col items-center justify-center h-screen'>
+      <div className='flex flex-col h-screen items-center w-10/12'>
         <h1 className=''>Iscrizione Giocatori</h1>
         {players.map((str, index) => (
         <div key={index}>
@@ -22,6 +22,7 @@ export default function Home() {
               type="text"
               value={str}
               onChange={(event) => handleInputChange(index, event)}
+              className='w-full'
             />
           </label>
         </div>
