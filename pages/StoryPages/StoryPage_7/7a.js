@@ -1,104 +1,102 @@
+import { useState } from 'react';
 import Link from 'next/link';
-import RulesButton from '../../RulesButton';
-import { useEffect } from 'react';
-import { Howl } from 'howler';
 
-export default function Intro() {
+export default function Page7() {
+  const [currentSlide, setCurrentSlide] = useState(1);
 
-    useEffect(() => {
-        const sound = new Howl({
-          src: ['/rend/dub 01 completa.wav'],
-          autoplay: true,
-          loop: true,
-          volume: 1.0,
-        });
-    
-        return () => {
-          sound.unload();
-        };
-      }, []);
-    
-      useEffect(() => {
-        const sound = new Howl({
-          src: ['/musiche/Shape-Book-ALL.wav'],
-          autoplay: true,
-          loop: true,
-          volume: 1.0,
-        });
-    
-        return () => {
-          sound.unload();
-        };
-      }, []);
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide % 6) + 1);
+  };
 
-
-    return (
-        <main className='text-5xl flex flex-col items-center justify-center w-screen h-screen'>
-            <div className="boxStyle top-60">
-            <div className='flex flex-row w-full justify-end'>
-                <div className="buttonContainer">
-                    <RulesButton />
-                </div>
-                </div>
-                <div className='imageStyle'></div>
-
-                <Link href="../index.js" passHref>
-            <button className='sfogliaStyle'></button>
-        </Link> 
-            </div>
-            
-        <style jsx>{`
-        .boxStyle  {
-            background-image: url('../../../complete/05-Immagine-Pulsanti/IP-ACCO.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+  return (
+    <main className='prova'>
+      <div className='boxStyle '>
+        {[1, 2, 3, 4, 5, 6].map((slideNumber) => (
+          <div
+            className={`ph${slideNumber}`}
+            key={slideNumber}
+            style={{ display: slideNumber === currentSlide ? 'flex' : 'none' }}
+          ></div>
+        ))}
+      </div>
+      <button className='sfogliaStyle' onClick={handleNextSlide}> </button>
+      <Link href="../../" passHref>
+        <button > e si ricomincia siori e siore </button>
+      </Link>
+      <style jsx>{`
+        .boxStyle {
+          background-image: url('../../complete/SR-MOCKUP.svg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          width: 100%;
         }
 
-        .textStyle  {
-            text-align: center;
-            font-size: 20px; /* Aggiunto 'px' e ridotto il valore del font size */
-            font-family: 'Times New Roman', Times, serif;
-            margin-top: -40px; /* Spazio sopra il testo */
-            margin-right: 20px;
-            margin-left: 20px;
+        .ph1,
+        .ph2,
+        .ph3,
+        .ph4,
+        .ph5,
+        .ph6 {
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100px;
+          width: 200px;
         }
 
-        .imageStyle {
-            background-image: url('../../../illustrazioni/1_a.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 80%;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 80px; /* Aumenta questo valore per spostare l'immagine più in basso */
-          }
-          
+        .ph1 {
+          background-image: url('../../../illustrazioni/2_B.png');
+        }
+        .ph2 {
+          background-image: url('../../../illustrazioni/2_F.png');
+        }
+        .ph3 {
+          background-image: url('../../../illustrazioni/3_raccordo_A.png');
+        }
+        .ph4 {
+          background-image: url('../../../illustrazioni/4_C.png');
+        }
+        .ph5 {
+          background-image: url('../../../illustrazioni/5_D.png');
+        }
+        .ph6 {
+          background-image: url('../../../illustrazioni/6_finale_A.png');
+        }
 
         .sfogliaStyle {
-            background-image: url('../../../complete/07-Slider-Recap/SR-Ricomincia.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            display: block;
-            padding: 25px 45px; /* Aumenta il padding per rendere il pulsante più grande */
-            margin-top: 20px; /* Sposta il pulsante più in basso */
-          }
+          background-image: url('../../complete/04-RichiamoGiocatori/RG-Sfoglia.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          padding: 25px 45px;
+          margin-top: 10px;
+        }
 
-          .buttonContainer {
-            /* position: absolute; */
-            top: 50px;
-            right: 80px;
+        .prova {
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            width: 100vw;
+
+            height: 100vh;
+
+
             display: flex;
-            gap: 10px; /* Spazio tra i pulsanti */
-          }
-          
+        
+        }
       `}</style>
-        </main>
-    );
+    </main>
+  );
 }
