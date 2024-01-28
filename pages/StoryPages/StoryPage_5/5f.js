@@ -24,20 +24,19 @@ export default function Intro() {
             <div className="boxStyle top-60">
             <div className='flex flex-row w-full justify-end'>
                 <div className="buttonContainer">
-                    <SettingButton />
                     <RulesButton />
                 </div>
                 </div>
                 <div className='imageStyle'></div>
                 <p className='textStyle'>
-                Nonostante gli immensi disastri, il pasticcione Almiro è fiero di esser 
-                riuscito a prepare la miglior torta di fagioli del reame.
+                A causa dell'esplosione i vestiti di Ditirello si sono strappati ed impolverati.
                     <br/>
-                    I servitori che dovranno pulire il pastrocchio non sono però altrettanto contenti.
+                    Tuttavia i suoi fan sembrano apprezzare questa novità.
                     <br/>
                 </p>
-                <div className='sfogliaStyle' > <Link href={{ pathname: '/5b', query: {step : 1}}}> </Link>   </div>
-                
+                <Link href="../StoryPage_6/6a" passHref>
+            <button className='sfogliaStyle'></button>
+        </Link> 
             </div>
             
         <style jsx>{`
