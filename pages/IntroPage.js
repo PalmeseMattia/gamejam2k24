@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; // Assicurati di importare Link da 'next/link'
 import styles from '../styles/MyPage.module.css'; // Assicurati che il percorso del file CSS sia corretto
-import SettingButton from './SettingButton';
+import SettingButton from '../components/SettingButton';
 
 const IntroPage = () => {
   const audioRef = useRef(null);

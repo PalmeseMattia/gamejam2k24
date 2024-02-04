@@ -1,24 +1,9 @@
 import Link from 'next/link';
-import RulesButton from './RulesButton';
-import { useEffect } from 'react';
-import { Howl } from 'howler';
+import RulesButton from './RulesButton'
 import SettingButton from './SettingButton';
 
 export default function CommonLayout({ titleText, imageComponent, mainText, buttonCTA }) {
-  useEffect(() => {
-    // Primo file audio
-    const sound1 = new Howl({
-      src: ['/musiche/Shape-Book-01.wav'],
-      autoplay: true,
-      loop: true,
-      volume: 0.5,
-    });
-
-    return () => {
-      // Scarica entrambi i suoni quando il componente viene smontato
-      sound1.unload();
-    };
-  }, []);
+  
 
   return (
     <main className='box flex flex-col items-center align-center justify-evenly w-100 h-screen bg-white px-1.5 py-2 '>

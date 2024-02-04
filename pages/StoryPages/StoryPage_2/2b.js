@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import RulesButton from '../../RulesButton';
+import RulesButton from '../../../components/RulesButton';
 import { useEffect } from 'react';
 import { Howl } from 'howler';
 

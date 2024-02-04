@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import SettingButton from '../../SettingButton';
-import RulesButton from '../../RulesButton';
+import SettingButton from '../../../components/SettingButton';
+import RulesButton from '../../../components/RulesButton';
 import { useEffect } from 'react';
 import { Howl } from 'howler';
 

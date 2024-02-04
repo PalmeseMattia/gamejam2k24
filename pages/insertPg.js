@@ -3,7 +3,8 @@ import { useState, useEffect} from 'react';
 import { Howl } from 'howler';
 import RulesButton from '../components/RulesButton';
 import styles from '../styles/Rules.module.css';
-
+import BG from '../public/selectplayericons/IG-BG.svg'
+import Image from 'next/image';
 
 const backgroundPlayerImages = [
   'url("/selectplayericons/IG_Player-1-BG.svg")',
@@ -59,8 +60,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-5xl flex items-center justify-center w-screen h-screen">
-      <div className='boxStyle'>
+    <main className="box flex flex-col items-center align-center justify-evenly w-100 h-screen bg-white px-1.5 py-2 ">
+      
         <div className='flex flex-row w-full justify-end'>
           <div className={styles.buttonContainer}>
             <RulesButton className={styles.RulesButton}/>
@@ -72,7 +73,7 @@ export default function Home() {
         <div className='players-container'>
           {players.map((str, index) => (
             <div key={index} className="playerBox bg-no-repeat">
-              <div className='penImage' style={{ background: backgroundPenImages[index] }}></div>
+              <div className='penImage bg-no-repeat' style={{ background: backgroundPenImages[index] }}></div>
               <label>
                 <input
                   type="text"
@@ -101,7 +102,7 @@ export default function Home() {
           <button onClick={removePlayer}>-</button>
         </div>
         <button className='play-button' onClick={playButtonHandler}></button>
-      </div>
+
       <style jsx>{`
         .iscrizionegiocatori {
           background-image: url('complete/02-Iscrizione-Giocatori/IG-Title-ACCO.svg');
@@ -130,15 +131,10 @@ export default function Home() {
 
         }
 
-        .boxStyle  {
+        .box  {
           background-image: url('selectplayericons/IG-BG.svg');
-          background-size: cover;
+          background-size: contain;
           background-repeat: no-repeat;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
         };
 
         .playerBox {

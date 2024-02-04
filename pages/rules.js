@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/Rules.module.css';
-import RulesButton from './RulesButton';
+import RulesButton from '../components/RulesButton';
 import BackButton from './BackButton';
 
 
