@@ -2,7 +2,7 @@ import Link from 'next/link';
 import RulesButton from './RulesButton'
 import SettingButton from './SettingButton';
 
-export default function CommonLayout({ titleText, imageComponent, mainText, buttonCTA }) {
+export default function CommonLayout({ titleText, imageComponent, mainText, buttonCTA, nextPage }) {
   
 
   return (
@@ -30,7 +30,7 @@ export default function CommonLayout({ titleText, imageComponent, mainText, butt
       </div>
 
       <div className='next bg-yellow-500 flex items-center justify-center w-[33vw] h-[10vh]'>
-        <Link href='./StoryPages/StoryPage_1/1a' passHref>
+        <Link href={nextPage} passHref>
           <button> {buttonCTA} </button>
         </Link>
       </div>

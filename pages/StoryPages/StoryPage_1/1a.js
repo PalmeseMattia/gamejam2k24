@@ -21,6 +21,6 @@ export default function Intro() {
   }, []);
 
     return (
-      <CommonLayout titleText='Into' imageComponent={null} mainText='antanisbirigudiloreipsum' buttonCTA='sfoglia'/>
+      <CommonLayout titleText='Into' imageComponent={null} mainText='antanisbirigudiloreipsum' buttonCTA='sfoglia' nextPage='../../selectpg'/>
     );
 }
