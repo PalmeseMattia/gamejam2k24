@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import RulesButton from '../../RulesButton';
+import RulesButton from './RulesButton';
 import { useEffect } from 'react';
 import { Howl } from 'howler';
-import SettingButton from '@/pages/SettingButton';
+import SettingButton from './SettingButton';
 
 export default function CommonLayout({ titleText, imageComponent, mainText, buttonCTA }) {
   useEffect(() => {
