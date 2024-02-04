@@ -2,6 +2,7 @@
 // import RulesButton from '../../../components/RulesButton';
 // import { useEffect } from 'react';
 // import { Howl } from 'howler';
+import CommonLayout from "@/components/commonLayout";
 
 export default function Intro() {
 
