@@ -21,8 +21,8 @@ export default function CommonLayout({ titleText, imageComponent, mainText, butt
   }, []);
 
   return (
-    <main className='box flex flex-col items-center align-center justify-evenly w-screen h-screen bg-white px-1.5 py-2'>
-      <div className='header bg-red-500 flex flex-row justify-between items-center w-[50vh] h-[15vh]'>
+    <main className='box flex flex-col items-center align-center justify-evenly w-100 h-screen bg-white px-1.5 py-2 '>
+      <div className='header bg-red-500 flex flex-row justify-between items-center w-[96vw] h-[15vh] px-1.5'>
         <div className='flex items-start'>
           <p className='Title'>
             title{titleText}
@@ -34,18 +34,18 @@ export default function CommonLayout({ titleText, imageComponent, mainText, butt
         </div>
       </div>
 
-      <div className='imagine bg-green-500 w-[50vh] h-[50vh]'>
+      <div className='imagine bg-green-500 w-[96vw] h-[50vh]'>
         {imageComponent}
       </div>
 
-      <div className='text bg-cyan-500 w-[50vh] h-[20vh]'>
+      <div className='text bg-cyan-500 w-[96vw] h-[20vh]'>
         <p className='textStyle w-100'>
           {mainText}
         </p>
       </div>
 
       <div className='next bg-yellow-500 flex items-center justify-center w-[33vw] h-[10vh]'>
-        <Link href='../StoryPage_2/2a' passHref>
+        <Link href='./StoryPages/StoryPage_1/1a' passHref>
           <button> {buttonCTA} </button>
         </Link>
       </div>
